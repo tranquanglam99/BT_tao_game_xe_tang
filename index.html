@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="border: 1px solid black; height: 190px; width: 190px; background-color: black;">
+        <img id="tank"
+            src="tank.png"
+            style="position: relative; top: 0px; left: 0px; transform: rotate(0deg);"
+            width="19"
+            height="19"
+        >
+    </p>
+    <script>
+        document.addEventListener("keydown", key => {
+            var toaDo = document.getElementById("tank");
+            var valueLeft = parseInt(toaDo.style["left"]);
+            var valueTop = parseInt(toaDo.style["top"]);
+
+            switch(key.keyCode) {
+                case 37:
+                    valueLeft --;
+                    toaDo.style["left"] = valueLeft + "px";
+                    toaDo.style["transform"] = "rotate(-90deg)";
+                    break;
+
+                case 38:
+                    valueTop --;
+                    toaDo.style["top"] = valueTop + "px";
+                    toaDo.style["transform"] = "rotate(0deg)";
+                    break;
+
+                case 39:
+                valueLeft ++;
+                toaDo.style["left"] = valueLeft + "px";
+                toaDo.style["transform"] = "rotate(90deg)";
+                break;
+                
+                case 40:
+                valueTop ++;
+                toaDo.style["top"] = valueTop + "px";
+                toaDo.style["transform"] = "rotate(180deg)";
+                break;      
+
+            }
+            
+        })
+    </script>
+</body>
+</html>
